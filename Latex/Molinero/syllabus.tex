@@ -1,0 +1,103 @@
+\documentclass[11pt]{article}
+\usepackage{aeguill}                            % Fonts in acrobat reader
+\usepackage[german,dutch,french,english]{babel} % Language to be used
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage[rgb,dvipsnames]{xcolor} 
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+\hypersetup{
+  pdftitle={Introduction to Python},
+  pdfauthor={Wim R. Cardoen, PhD},
+  pdfpagelayout=SinglePage,
+  bookmarks=false,
+  colorlinks=true,
+  urlcolor=blue,    
+  linkcolor=red,
+  citecolor=OliveGreen
+}
+
+\begin{document}
+\thispagestyle{empty}
+\title{Introduction to Python}
+\author{Wim R. Cardoen, PhD \\
+        University of Utah\\
+        Center for High Performance Computing \\ 
+        155 S. 1452 E. Rm. 420\\ 
+        Salt Lake City, UT 84112-0190 \\
+        USA\\
+        \texttt{wim.cardoen@utah.edu}}
+%\renewcommand{\today}{Sep 10, 2014} 
+\renewcommand{\labelitemii}{$\star$}
+\maketitle\thispagestyle{empty}
+\pagebreak
+% ----------------------------------------------------------------
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section*{Introduction}
+In the coming three lectures I will give an introduction to the use of Python in scientific computing. 
+During the first two lectures I will cover the core of the Python language.
+In the last lecture the basics of numpy, scipy and matplotlib (if time permits) will be addressed.
+
+\renewcommand \thesection{\Roman{section}}
+\section{Python distribution}
+During the lectures I will be using the Anaconda Scientific Python distribution.
+The distribution can be downloaded from \href{https://store.continuum.io/cshop/anaconda/}{here}.
+
+If you plan to attend the lectures you \textbf{must} install the Anaconda distribution 
+\textbf{before} the start of the first lecture. Due to time constraints we do not have time to 
+do the installation in class.
+If you face a problem with the installation, please send an email to the 
+\href{mailto:issues@chpc.utah.edu}{CHPC Helpdesk} (Subject of the email: Anaconda install).
+
+\section{When/where?}
+All Python lectures will take place in the INSCC building from 1.00 pm to 3.00 pm
+\begin{itemize}
+ \item Mon. 09/15/2014  Rm. $407$ (a.k.a. INSCC Training Lab)
+ \item Mon. 09/22/2014  Rm. $345$
+ \item Wed. 10/01/2014  Rm. $105$ (a.k.a. INSCC Auditorium)
+\end{itemize}
+
+
+\section{Topics to be covered}
+\begin{itemize} 
+ \item Introduction to IPython
+ \item Why Python?
+ \item Variables, assignments, operators
+ \item Control structures
+ \item Functions
+ \item Modules
+ \item Standard library 
+ \item Exceptions
+ \item Object-Oriented programming in Python
+ \item $\ldots$
+ \item Numpy, Scipy \& a taste of Matplotlib (if time permits)
+\end{itemize}
+
+\section{Useful links}
+\begin{itemize} 
+ \item Online Tutorials:
+    \begin{itemize} 
+       \item \url{https://docs.python.org/2/} 
+       \item \url{http://www.numpy.org/}
+       \item \url{http://www.scipy.org/}
+    \end{itemize} 
+ \item Books
+    \begin{itemize} 
+       \item Python Essential Reference\,\cite{BEAZLEY:2009a}
+       \item $\ldots$
+    \end{itemize} 
+ \item IDEs
+    \begin{itemize}
+       \item \href{http://code.google.com/p/spyderlib/}{Spyder}
+       \item \href{http://www.eclipse.org/}{Eclipse} (You need to install the Python plugin)
+       \item \href{http://www.jetbrains.com/pycharm/}{PyCharm} (The Community Edition is free) 
+    \end{itemize}
+    The Spyder IDE is installed within the Anaconda distribution and will be introduced during the class.
+\end{itemize}
+
+% ------------------------------ Bibliography -----------------------
+\bibliographystyle{plain}
+\bibliography{syllabus}
+\end{document}
+

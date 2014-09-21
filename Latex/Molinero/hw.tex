@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{aeguill}                            % Fonts in acrobat reader
+\usepackage[german,dutch,french,english]{babel} % Language to be used
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage[rgb,dvipsnames]{xcolor} 
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+\hypersetup{
+  pdftitle={Introduction to Python - projects},
+  pdfauthor={Wim R. Cardoen, PhD},
+  pdfpagelayout=SinglePage,
+  bookmarks=false,
+  colorlinks=true,
+  urlcolor=blue,    
+  linkcolor=red,
+  citecolor=OliveGreen
+}
+
+\begin{document}
+\thispagestyle{empty}
+\renewcommand{\labelitemii}{$\star$}
+\pagebreak
+% ----------------------------------------------------------------
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section*{Exercises}
+At the end of this course you should be able to tackle a lot of computational problems.
+You should be able to write your own Molecular Dynamics (MD) or Monte Carlo (MC) code 
+to perform molecular simulations. Just do it!.
+
+The
+The following problems are interesting programming exercises where you can apply a lot of 
+the techniques that you have been learning during the Python lectures.
+
+\begin{itemize}
+\item Ewald summation \newline
+The Ewald\,\cite{EWALD:1921a,DELEEUW:1980a,DELEEUW:1980b,DELEEUW:1983a} summation 
+has been developed to calculate the Coulomb interaction for systems with periodic boundary conditions. 
+Write your own Python code to calculate the energy, forces 
+(using analytical derivatives - you can check your code using numerical derivates) and 
+virial for a 3D periodic system. Calculate the Madelung constant for a NaCl lattice using your Ewald code. 
+Observe the "convergence" of the Ewald summation.  
+
+\textbf{Extra challenge}:\newline
+In the latter nineties the Smooth Particle Mesh Ewald\,\cite{ESSMANN:1995a} (SPME) 
+method was developed as an alternative way to calculate the Ewald sums. 
+Instead of doing a regular sum the charges are first mapped (using a spline interpolation) 
+into a regular equidistant grid. The summation can then be performed with a Fast Fourier 
+Transform (FFT).
+
+\item Ground state of the Heisenberg spin lattice\newline
+The Heisenberg Hamiltonian is used to model ferromagnetic and antiferromagnetic systems at low temperature.
+The atoms (each having spin $S_i$ are placed on the vertices of the lattice. 
+The interaction is given by the (Heisenberg) Hamiltonian:
+\begin{eqnarray}
+       \hat{H} & = & \frac{J}{2} \, \sum_{i} \hat{S}_{i}  \hat{S}_{i+1}
+\end{eqnarray}
+Write your own Python code to calculate the ground state wave function and its energy for a 1D and 2D lattices
+where the spin of each atom is: $\frac{1}{2}$, $1$, $2$. 
+
+FYI: Hans Bethe\,\cite{BETHE:1931a} worked out an analytical solution (using the Bethe Ansatz)
+for the infinite 1D lattice for spin $\frac{1}{2}$ particles.
+
+\textbf{Extra challenge}:\newline
+The Hilbert space for this problem scales exponentially with the size of the system (in casu $(2\,S+1)^N$ where $N$ 
+stands for the number of vertices on the lattice and $S$ stands for the atom's spin). 
+
+If you want to find the ground state energy and wave function of large spin chains, 
+you need to implement iterative eigenvalue methods for large sparse matrices (using 
+e.g.~the Lanczos\,\cite{CULLUM:2002a} or Davidson\,\cite{DAVIDSON:1975a} algorithms).
+
+\item Finding the transition state on a PES\newline
+The transition state is an important feature in the study of chemical reactions. 
+Cerjan and Miller\,\cite{CERJAN:1979a} wrote one of the earliest papers on how to find a first-order transition state 
+using the eigenmode following technique.
+Write your own Python code and find the minima/transition states of the M\"uller-Brown surface\,\cite{MUELLER:1979a}, which 
+has the following functional form:
+\begin{eqnarray}
+   f(x,y) & = & \sum_{i=1}^{4} A_i\, \exp \Large[ a_i (x-x_0^i)^2 \,+\, b_i (x-x_0^i)(y-y_0^i)\, + \\
+          &   &                                   c_i (y-y_0^i)^2 \Large ]                                   
+\end{eqnarray}
+\item Suggestions?
+
+\end{itemize}
+
+% ------------------------------ Bibliography -----------------------
+% Check also: /uufs/chpc.utah.edu/common/home/u0253283/public_html/private/phys/statmech/md/ewald
+\bibliographystyle{h-physrev}
+\bibliography{string,syllabus}
+\end{document}
+
