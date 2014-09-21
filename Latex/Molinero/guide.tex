@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\usepackage{aeguill}                            % Fonts in acrobat reader
+\usepackage[german,dutch,french,english]{babel} % Language to be used
+\usepackage{color}
+\usepackage{hyperref} 
+\usepackage[rgb,dvipsnames]{xcolor} 
+\definecolor{OliveGreen}{rgb}{0,0.6,0}
+\hypersetup{
+  pdftitle={Guidelines - projects},
+  pdfauthor={Wim R. Cardoen, PhD},
+  pdfpagelayout=SinglePage,
+  bookmarks=false,
+  colorlinks=true,
+  urlcolor=blue,    
+  linkcolor=red,
+  citecolor=OliveGreen
+}
+
+\begin{document}
+\thispagestyle{empty}
+\renewcommand{\labelitemii}{$\star$}
+\pagebreak
+% ----------------------------------------------------------------
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section*{Programming Guidelines}
+In this section the programming guidelines are to be described.
+
+\begin{itemize} 
+\item Each programming project should be version controlled. You can 
+use svn, git,....
+\item Try to follow the PEP8 rules as close as possible. Read the PEP8 document 
+before you start coding on the project.
+\item Make use of the doc string utility within Python. Write clearly what the purpose is of a
+class as well as for functions and methods. Functions and method also should have a description 
+of their input arguments and their returns.
+\item Write some test case for each module.
+\end{itemize}
+
+% ------------------------------ Bibliography -----------------------
+\bibliographystyle{h-physrev}
+\bibliography{string,syllabus}
+\end{document}
+
